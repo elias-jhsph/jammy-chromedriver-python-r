@@ -20,5 +20,7 @@ RUN apt install -y python3.11-venv software-properties-common && \
     python3.11 get-pip.py && \
     python3.11 -m venv env && \
     . env/bin/activate && \
-    python3.11 -m pip install -r requirements.txt && \
+    python3.11 -m pip install -r requirements.txt
+
+RUN apt install -y r-cran-rjava librsvg2-dev gsl-bin && \
     Rscript --vanilla install2.R
