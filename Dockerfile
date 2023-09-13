@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ADD . /
 
 RUN apt update && \
-    apt install -y && \
+    apt install curl wget -y && \
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
     dpkg -i google-chrome-stable_current_amd64.deb || apt-get install -fy && \
     CHROMEDRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_114") && \
