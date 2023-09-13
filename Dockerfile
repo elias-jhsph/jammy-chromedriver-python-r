@@ -1,4 +1,4 @@
-FROM rocker/base:4.3.1
+FROM rocker/r-base:4.3.1
 
 ENV DEBIAN_FRONTEND=noninteractive
 
