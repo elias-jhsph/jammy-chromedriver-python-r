@@ -22,6 +22,6 @@ RUN apt install -y python3.11-venv software-properties-common && \
     . env/bin/activate && \
     python3.11 -m pip install -r requirements.txt
 
-RUN apt install -y r-cran-rjava librsvg2-dev gsl-bin && \
-    R CMD javareconf -e && \
+RUN apt install -y default-jre default-jdk r-cran-rjava librsvg2-dev gsl-bin && \
+    R CMD javareconf && \
     Rscript --vanilla install2.R
