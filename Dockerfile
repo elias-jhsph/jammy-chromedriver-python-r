@@ -19,6 +19,5 @@ RUN apt-get install python3-launchpadlib -y && \
     . env/bin/activate && \
     python3.11 -m pip install -r requirements.txt
 
-RUN apt install -y default-jre default-jdk r-cran-rjava && \
-    R CMD javareconf && \
+RUN apt install -y libgsl-dev && \
     Rscript --vanilla install2.R
