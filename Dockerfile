@@ -1,4 +1,4 @@
-FROM rocker/r-base:4.3.1
+FROM rocker/verse:latest-daily
 
 ENV DEBIAN_FRONTEND=noninteractive
 
