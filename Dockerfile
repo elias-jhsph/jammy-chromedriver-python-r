@@ -14,7 +14,7 @@ RUN apt update && \
     chmod +x /usr/bin/chromedriver
 
 RUN apt-get install python3-launchpadlib -y && \
-    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
+    apt install python3.11-venv && \
     python3.11 -m venv env && \
     . env/bin/activate && \
     python3.11 -m pip install -r requirements.txt
