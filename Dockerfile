@@ -19,5 +19,5 @@ RUN apt-get install python3-launchpadlib -y && \
     . env/bin/activate && \
     python3.11 -m pip install -r requirements.txt
 
-RUN apt install -y libgsl-dev && \
+RUN apt install -y libgsl-dev libpoppler-cpp-dev && \
     Rscript --vanilla install2.R
