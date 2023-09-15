@@ -15,7 +15,6 @@ RUN apt update && \
 
 RUN apt-get install python3-launchpadlib -y && \
     curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
-    python3.11 get-pip.py && \
     python3.11 -m venv env && \
     . env/bin/activate && \
     python3.11 -m pip install -r requirements.txt
