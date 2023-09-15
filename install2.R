@@ -29,4 +29,4 @@ install.packages(c(
   'shape',
   'writexl',
   'lpSolve'
-), method='auto', repos='http://cran.us.r-project.org', type="source")
+), method='auto', repos='http://cran.us.r-project.org')
