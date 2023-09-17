@@ -18,7 +18,7 @@ RUN apt install python3-launchpadlib python3.11-venv -y && \
     . env/bin/activate && \
     python3.11 -m pip install -r requirements.txt
 
-RUN apt install --no-install-recommends software-properties-common dirmngr default-jre default-jdk -y && \
+RUN apt install --no-install-recommends software-properties-common dirmngr gpg-agent default-jre default-jdk -y && \
     wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc && \
     add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" && \
     apt install --no-install-recommends r-base -y
