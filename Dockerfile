@@ -19,6 +19,7 @@ RUN apt-get install python3-launchpadlib -y && \
     . env/bin/activate && \
     python3.11 -m pip install -r requirements.txt
 
-RUN add-apt-repository ppa:c2d4u.team/c2d4u4.0+ -y && \
+RUN apt install software-properties-common -y && \
+    add-apt-repository ppa:c2d4u.team/c2d4u4.0+ -y && \
     apt install r-cran-* -y && \
     Rscript --vanilla install2.R
