@@ -1,4 +1,4 @@
-FROM rocker/verse:latest-daily
+FROM rocker/r-ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
