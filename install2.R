@@ -1,35 +1,10 @@
-pkg_list <- c(
-  'assertthat',
-  'feather',
-  'knitr',
-  'kableExtra',
-  'htmlTable',
-  'htmltools',
-  'tidyverse',
-  'htmlwidgets',
-  'plotly',
-  'devtools',
-  'tm',
-  'tidytext',
-  'wordcloud',
-  'ggwordcloud',
-  'RColorBrewer',
-  'SnowballC',
-  'topicmodels',
-  'reshape2',
-  'DiagrammeR',
-  'DiagrammeRsvg',
-  'rsvg',
-  'stringdist',
-  'qdap',
-  'janitor',
-  'staplr',
-  'qpdf',
-  'pagedown',
-  'shape',
-  'writexl',
-  'lpSolve'
-)
+pkg_list <- readLines("packages.txt")
+
+# Remove any leading or trailing whitespace
+pkg_list <- trimws(pkg_list)
+
+# Remove any empty lines (if any)
+pkg_list <- pkg_list[nzchar(pkg_list)]
 
 install_if_not_present <- function(pkg) {
   if (!requireNamespace(pkg, quietly = TRUE)) {
