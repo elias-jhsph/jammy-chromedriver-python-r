@@ -13,13 +13,14 @@ RUN apt update && \
     unzip chromedriver_linux64.zip -d /usr/bin && \
     chmod +x /usr/bin/chromedriver
 
-RUN apt-get install python3-launchpadlib -y && \
-    apt install python3.11-venv -y && \
+RUN apt install python3-launchpadlib python3.11-venv -y && \
     python3.11 -m venv env && \
     . env/bin/activate && \
     python3.11 -m pip install -r requirements.txt
 
 RUN apt install software-properties-common -y && \
     add-apt-repository ppa:c2d4u.team/c2d4u4.0+ -y && \
-    apt install r-cran-* -y && \
+    for pkg in $(apt search r-cran- | grep ^r-cran- | cut -d/ -f1); \
+    do sudo apt install -y $pkg || echo "Failed to install $pkg"; \
+    done && \
     Rscript --vanilla install2.R
