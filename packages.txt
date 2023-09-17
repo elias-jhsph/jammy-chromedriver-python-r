@@ -28,3 +28,4 @@ pagedown
 shape 
 writexl 
 lpSolve
+pdftools
