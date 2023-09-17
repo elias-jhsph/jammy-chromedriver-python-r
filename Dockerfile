@@ -21,6 +21,6 @@ RUN apt install python3-launchpadlib python3.11-venv -y && \
 RUN apt install software-properties-common -y && \
     add-apt-repository ppa:c2d4u.team/c2d4u4.0+ -y && \
     for pkg in $(awk '{ print "r-cran-" tolower($0) }' packages.txt); \
-    do sudo apt install -y $pkg || echo "Failed to install $pkg"; \
+    do apt install -y $pkg || echo "Failed to install $pkg"; \
     done && \
     Rscript --vanilla install2.R
