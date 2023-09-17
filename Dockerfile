@@ -1,4 +1,4 @@
-FROM rocker/r-ubuntu:22.04
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -18,8 +18,12 @@ RUN apt install python3-launchpadlib python3.11-venv -y && \
     . env/bin/activate && \
     python3.11 -m pip install -r requirements.txt
 
-RUN apt install software-properties-common -y && \
-    add-apt-repository ppa:c2d4u.team/c2d4u4.0+ -y && \
+RUN apt install --no-install-recommends software-properties-common dirmngr && \
+    wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc && \
+    add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" && \
+    sudo apt install --no-install-recommends r-base
+
+RUN add-apt-repository ppa:c2d4u.team/c2d4u4.0+ -y && \
     for pkg in $(awk '{ print "r-cran-" tolower($0) }' packages.txt); \
     do apt install -y $pkg || echo "Failed to install $pkg"; \
     done && \
