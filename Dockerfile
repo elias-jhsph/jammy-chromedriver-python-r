@@ -19,5 +19,6 @@ RUN apt-get install python3-launchpadlib -y && \
     . env/bin/activate && \
     python3.11 -m pip install -r requirements.txt
 
-RUN apt install -y libgsl-dev libpoppler-cpp-dev && \
+RUN add-apt-repository ppa:c2d4u.team/c2d4u4.0+ && \
+    apt install r-cran-* && \
     Rscript --vanilla install2.R
