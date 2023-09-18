@@ -7,15 +7,9 @@ pkg_list <- trimws(pkg_list)
 pkg_list <- pkg_list[nzchar(pkg_list)]
 
 install_if_not_present <- function(pkg) {
-  tryCatch(
-    expr = {
-        requireNamespace(pkg)
-    
-    },
-    error = function(e){ 
-        install.packages(pkg, method='auto', repos='http://cran.us.r-project.org', type="source")
-    }
-  )
+  if(!requireNamespace(pkg)){
+    install.packages(pkg, method='auto', repos='http://cran.us.r-project.org', type="source")
+  }
 }
 
 lapply(pkg_list, install_if_not_present)
