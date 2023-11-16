@@ -19,8 +19,8 @@ RUN apt install python3-launchpadlib python3.11-venv -y && \
     python3.11 -m pip install -r requirements.txt
 
 RUN apt install --no-install-recommends software-properties-common dirmngr gpg-agent default-jre default-jdk -y && \
-    wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc -y| tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc -y && \
-    add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" -11 -5 && \
+    wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc && \
+    add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" -y -11 -5 && \
     apt install --no-install-recommends r-base -y
 
 RUN add-apt-repository ppa:c2d4u.team/c2d4u4.0+ -y && \
