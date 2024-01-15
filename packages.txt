@@ -29,3 +29,4 @@ shape
 writexl 
 lpSolve
 pdftools
+sqldf
