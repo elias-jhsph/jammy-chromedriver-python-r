@@ -29,4 +29,5 @@ shape
 writexl 
 lpSolve
 pdftools
+RSQLite
 sqldf
