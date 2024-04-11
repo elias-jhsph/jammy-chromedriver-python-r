@@ -23,3 +23,5 @@ firebase-admin
 google-cloud-core
 google-cloud-compute
 matplotlib
+openai
+flask-sock
