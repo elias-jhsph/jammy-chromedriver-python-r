@@ -23,6 +23,6 @@ firebase-admin
 google-cloud-core
 google-cloud-compute
 matplotlib
-openai
+openai==1.17.0
 flask-sock
 sqlparse
