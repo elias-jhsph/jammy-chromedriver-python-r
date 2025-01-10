@@ -31,3 +31,4 @@ lpSolve
 pdftools
 RSQLite
 sqldf
+mice
