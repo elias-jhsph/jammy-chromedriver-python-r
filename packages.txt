@@ -31,5 +31,5 @@ lpSolve
 pdftools
 RSQLite
 sqldf
-mice
 km.ci
+mice
