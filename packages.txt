@@ -32,3 +32,4 @@ pdftools
 RSQLite
 sqldf
 mice
+km.ci
