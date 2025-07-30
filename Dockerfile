@@ -27,4 +27,5 @@ RUN add-apt-repository ppa:c2d4u.team/c2d4u4.0+ -y && \
     for pkg in $(awk '{ print "r-cran-" tolower($0) }' packages.txt); \
     do apt install -y $pkg || echo "Failed to install $pkg"; \
     done && \
+    apt install -y build-essential r-base-dev gfortran libblas-dev liblapack-dev && \
     Rscript --vanilla install2.R
