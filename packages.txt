@@ -31,5 +31,9 @@ lpSolve
 pdftools
 RSQLite
 sqldf
-km.ci
+brms
+truncnorm
+survminer
+broom.mixed
+brmsmargins
 mice
