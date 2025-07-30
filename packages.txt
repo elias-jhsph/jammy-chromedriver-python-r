@@ -36,5 +36,7 @@ truncnorm
 survminer
 gtsummary
 broom.mixed
+splines2
+rcpparmadillo
 brmsmargins
 mice
