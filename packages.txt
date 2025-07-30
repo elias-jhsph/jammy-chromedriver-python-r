@@ -34,6 +34,7 @@ sqldf
 brms
 truncnorm
 survminer
+gtsummary
 broom.mixed
 brmsmargins
 mice
