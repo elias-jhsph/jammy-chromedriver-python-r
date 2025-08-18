@@ -4,7 +4,8 @@ knitr
 kableExtra 
 htmlTable 
 htmltools 
-tidyverse 
+tidyverse
+jsonlite 
 htmlwidgets 
 plotly 
 devtools 
